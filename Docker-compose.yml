@@ -39,18 +39,4 @@ services:
     ports:
       - "3000:3000"
 
-  loki:
-    image: grafana/loki:latest
-    container_name: loki
-    ports:
-      - "3100:3100"
-    command: -config.file=/etc/loki/loki-config.yml
-    volumes:
-      - ./loki/loki-config.yml:/etc/loki/loki-config.yml
-
-  promtail:
-    image: grafana/promtail:latest
-    container_name: promtail
-    volumes:
-      - ./promtail/promtail-config.yml:/etc/promtail/promtail-config.yml
-      - /var/log:/var/log
+  
